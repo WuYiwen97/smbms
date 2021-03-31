@@ -29,6 +29,7 @@ public class UserServiceImpl implements UserService{
 		boolean flag = false;
 		Connection connection = null;
 		try {
+			System.out.println("connetion to mysql ======");
 			connection = BaseDao.getConnection();
 			connection.setAutoCommit(false);//开启JDBC事务管理
 			int updateRows = userDao.add(connection,user);
@@ -61,6 +62,7 @@ public class UserServiceImpl implements UserService{
 		Connection connection = null;
 		User user = null;
 		try {
+			System.out.println("get connection == ");
 			connection = BaseDao.getConnection();
 			user = userDao.getLoginUser(connection, userCode);
 		} catch (Exception e) {

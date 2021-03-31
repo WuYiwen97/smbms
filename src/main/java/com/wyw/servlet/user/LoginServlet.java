@@ -28,6 +28,8 @@ public class LoginServlet extends HttpServlet {
 		//获取用户名和密码
 		String userCode = request.getParameter("userCode");
 		String userPassword = request.getParameter("userPassword");
+
+		System.out.println("usercode ="+ userCode +"/ usrPwd ="+userPassword);
 		//调用service方法，进行用户匹配
 		UserService userService = new UserServiceImpl();
 		User user = userService.login(userCode,userPassword);
